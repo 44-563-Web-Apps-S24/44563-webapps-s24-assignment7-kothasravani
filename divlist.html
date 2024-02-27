@@ -7,33 +7,40 @@
     <title>list with divs</title>
     <style>
         .flex-container {
-      display: flex;  flex-direction:row;
-      background-color: red;
-  }
+            display: flex;
+            flex-direction: row;
+            background-color: #4F5B67;
+        }
 
-.flex-container > div {  /*div children of the flex container*/
-  background-color: #f1f1f1; 
-  margin: 10px;  padding: 20px;  font-size: 30px;
-}
+        .flex-container>div {
+            /*div children of the flex container*/
+            background-color: #FAE2E0;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
 
-/* Responsive layout */
-@media (max-width: 600px) { 
-	 .flex-container{
-		 flex-direction:column;
-		 background-color: green;
-	  }
-	}
+        /* Responsive layout */
+        @media (max-width: 600px) {
+            .flex-container {
+                flex-direction: column;
+                background-color: green;
+            }
+        }
     </style>
 </head>
 
-<body>
+<body style="background-color: #FAE2E0; color: #4F5B67; font-family: cursive;">
     <h1>SravaniKotha builds list with divs</h1>
+    <br>
+    <input type="text" id="inputText" placeholder="Enter item"
+        style="background-color: #4F5B67; color: white; padding: 0.5%;">
+    <button onclick="addItemToFront()" style="background-color: #4F5B67; color: #FAE2E0; padding: 0.5%">Add
+        front</button>
+    <button onclick="removeItem()" style="background-color: #4F5B67; color: #FAE2E0; padding: 0.5%">Remove</button>
+    <button onclick="addItemToEnd()" style="background-color: #4F5B67; color: #FAE2E0; padding: 0.5%">Add end</button>
 
-    <input type="text" id="inputText" placeholder="Enter item">
-
-    <button onclick="addItemToEnd()">Add end</button>
-
-    <div class="flex-container">
+    <div class="flex-container" style="padding: 1%; margin-top: 5%;">
         <div class="divlist">Item 1</div>
         <div class="divlist">Item 2</div>
         <div class="divlist">Item 3</div>
@@ -50,8 +57,33 @@
             newDiv.className = "divlist";
             newDiv.style.color = "orange";
 
-            // Append the new div to the flex container
+            // Append
             document.querySelector(".flex-container").appendChild(newDiv);
+        }
+        function addItemToEnd() {
+            const inputValue = document.getElementById("inputText").value;
+            const newDiv = document.createElement("div");
+            newDiv.innerHTML = inputValue;
+            newDiv.className = "divlist";
+            document.querySelector(".flex-container").appendChild(newDiv);
+        }
+
+        function addItemToFront() {
+            const inputValue = document.getElementById("inputText").value;
+            const newDiv = document.createElement("div");
+            newDiv.innerHTML = inputValue;
+            newDiv.className = "divlist";
+            const container = document.querySelector(".flex-container");
+            container.insertBefore(newDiv, container.firstChild);
+        }
+
+        function removeItem() {
+            const divListItems = document.getElementsByClassName("divlist");
+            const length = divListItems.length;
+            if (length > 0) {
+                const middleIndex = Math.floor(length / 2);
+                divListItems[middleIndex].remove();
+            }
         }
     </script>
 </body>
