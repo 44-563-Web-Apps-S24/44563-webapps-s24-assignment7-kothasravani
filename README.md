@@ -3,10 +3,10 @@
 An assignment on java script modifying the DOM and using anonymous callback functions.  
 
 ***Hosted At:***  
-<file:///C:/Assignments/webapps%20assignment/44563-webapps-s24-assignment7-kothasravani/money.html>  
+<https://44-563-web-apps-s24.github.io/44563-webapps-s24-assignment7-kothasravani/money.html>  
 
 ***Hosted At:***  
-<file:///C:/Assignments/webapps%20assignment/44563-webapps-s24-assignment7-kothasravani/precision.html>  
+<https://44-563-web-apps-s24.github.io/44563-webapps-s24-assignment7-kothasravani/precision.html>  
 
 ***Hosted At:***  
-<file:///C:/Assignments/webapps%20assignment/44563-webapps-s24-assignment7-kothasravani/divlist.html>
+<https://44-563-web-apps-s24.github.io/44563-webapps-s24-assignment7-kothasravani/divlist.html>
