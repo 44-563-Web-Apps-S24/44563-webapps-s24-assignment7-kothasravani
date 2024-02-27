@@ -1,6 +1,12 @@
 <!DOCTYPE html>
-<html> <head> <style>
-    .flex-container {
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list with divs</title>
+    <style>
+        .flex-container {
       display: flex;  flex-direction:row;
       background-color: red;
   }
@@ -17,34 +23,37 @@
 		 background-color: green;
 	  }
 	}
-</style></head>
-
-
+    </style>
+</head>
 
 <body>
-		<div class="flex-container" id="target">
-		  <div>row item 1</div>   
-		  <div>row item 2</div>  
-		  <div>row item 3</div>  
-		</div>
-	
-	<p> Press the button to create an new element of type div and then add it to the container.
-		</p>
-		<button onclick="makeNewDiv()">Add one</button>
-	
-	
-</body>
-<script>
-	function makeNewDiv(){
-		/* make the div and its text */
-		let element = document.createElement("div")
-		element.innerHTML = "an item after 3"
-		element.style.color = "orange"
+    <h1>SravaniKotha builds list with divs</h1>
 
-		/* add it to the container */
-		let container = document.getElementById('target')
-		container.appendChild(element)
-		
-	}
-</script>
-</html>	
+    <input type="text" id="inputText" placeholder="Enter item">
+
+    <button onclick="addItemToEnd()">Add end</button>
+
+    <div class="flex-container">
+        <div class="divlist">Item 1</div>
+        <div class="divlist">Item 2</div>
+        <div class="divlist">Item 3</div>
+    </div>
+
+    <script>
+        function addItemToEnd() {
+            // Get the input value
+            const inputValue = document.getElementById("inputText").value;
+
+            // Create a new div element
+            const newDiv = document.createElement("div");
+            newDiv.innerHTML = inputValue;
+            newDiv.className = "divlist";
+            newDiv.style.color = "orange";
+
+            // Append the new div to the flex container
+            document.querySelector(".flex-container").appendChild(newDiv);
+        }
+    </script>
+</body>
+
+</html>
