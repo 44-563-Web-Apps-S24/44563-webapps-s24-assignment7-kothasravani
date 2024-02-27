@@ -39,6 +39,7 @@
         front</button>
     <button onclick="removeItem()" style="background-color: #4F5B67; color: #FAE2E0; padding: 0.5%">Remove</button>
     <button onclick="addItemToEnd()" style="background-color: #4F5B67; color: #FAE2E0; padding: 0.5%">Add end</button>
+    <button onclick="swapItems()" style="background-color: #4F5B67; color: #FAE2E0; padding: 0.5%">Swap</button>
 
     <div class="flex-container" style="padding: 1%; margin-top: 5%;">
         <div class="divlist">Item 1</div>
@@ -83,6 +84,26 @@
             if (length > 0) {
                 const middleIndex = Math.floor(length / 2);
                 divListItems[middleIndex].remove();
+            }
+        }
+
+        function swapItems() {
+            const divListItems = document.getElementsByClassName("divlist");
+            const length = divListItems.length;
+            if (length >= 2) {
+                const index1 = Math.floor(Math.random() * length);
+                let index2 = Math.floor(Math.random() * length);
+                // Ensure that index2 is different from index1
+                while (index2 === index1) {
+                    index2 = Math.floor(Math.random() * length);
+                }
+
+                const item1 = divListItems[index1];
+                const item2 = divListItems[index2];
+                // Swap the positions of the two items
+                const temp = item1.nextSibling;
+                item2.parentNode.insertBefore(item1, item2.nextSibling);
+                item1.parentNode.insertBefore(item2, temp);
             }
         }
     </script>
