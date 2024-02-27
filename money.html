@@ -18,9 +18,9 @@
 <body style="background-color: #FAE2E0; color: #4F5B67; font-family: cursive;">
     <div class="container">
         <h1 class="my-3">Find the coins by Sravani Kotha</h1>
-        <p class="fw-semibold">
-            Click on the locations to find coins, beware the monster
-        </p>
+        <button class="btn" style="padding: 1.5%; margin-bottom: 1%; background-color: #4F5B67; color: #FAE2E0;"
+            onclick="newGame()">New game</button>
+        <p class="fw-semibold">Click on the locations to find coins, beware the monster</p>
         <div class="row1">
             <div class="col-4">
                 <p id="locations">Number of locations checked is zero.</p>
@@ -132,7 +132,6 @@
                 .setAttribute("src", "imagebuilding.png");
         }
     }
-
     function check(position) {
         if (gameOver) {
             return;
@@ -195,7 +194,6 @@
         } else {
             helpText = "all clear";
         }
-
         const helpEl = document.getElementById("help");
         helpEl.textContent = helpText;
     }
