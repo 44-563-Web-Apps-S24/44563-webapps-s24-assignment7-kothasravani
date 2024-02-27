@@ -93,14 +93,14 @@
             if (length >= 2) {
                 const index1 = Math.floor(Math.random() * length);
                 let index2 = Math.floor(Math.random() * length);
-                // Ensure that index2 is different from index1
+                // Ensure swapping
                 while (index2 === index1) {
                     index2 = Math.floor(Math.random() * length);
                 }
 
                 const item1 = divListItems[index1];
                 const item2 = divListItems[index2];
-                // Swap the positions of the two items
+                // Swap the positions
                 const temp = item1.nextSibling;
                 item2.parentNode.insertBefore(item1, item2.nextSibling);
                 item1.parentNode.insertBefore(item2, temp);
