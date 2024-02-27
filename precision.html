@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SpeedCheck</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: #FAE2E0; color: #4F5B67; font-family: cursive;">
+
+    <body>
+        <h1 class="mb-4">SravaniKotha Speed Check</h1>
+        <div id="target" class="mb-3">Your time: </div>
+        <div id="counter" class="mb-3">Count: </div>
+        <button class="btn btn-primary me-2" onclick="startTimer()">Start Timer</button>
+        <button class="btn btn-danger" onclick="recordTime()">Stop Timer</button>
+        <script>
+            let stopTime = undefined;
+            function recordTime() {
+                stopTime = Date.now();
+                console.log("Stop time recorded:", stopTime);
+            }
+            document.getElementById("stopButton").onclick = recordTime;
+
+            let startTime;
+            function startTimer() {
+                startTime = Date.now();
+                console.log("Start time recorded:", startTime);
+                let elapsedTime = Date.now() - startTime;
+                console.log("Time elapsed:", elapsedTime);
+                setTimeout(() => {
+                    document.getElementById("counter").textContent = "Count: " + elapsedTime + "ms";
+                }, 0);
+            }
+        </script>
+    </body>
+
+</html>
